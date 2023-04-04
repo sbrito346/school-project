@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+<BorderPane fx:id="customerPane" xmlns:fx="http://javafx.com/fxml" fx:controller="home.customer.CustomerController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+   <center>
+       <TableView fx:id="customerTable">
+           <columns>
+               <TableColumn text="ID" maxWidth="30">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="id"/>
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Name">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="name"/>
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Address">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="address"/>
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="State/Province">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="divisionName"/>
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Country">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="countryName"/>
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Postal Code" >
+                   <cellValueFactory>
+                       <PropertyValueFactory property="postalCode"/>
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Phone Number" minWidth="100">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="phoneNumber"/>
+                   </cellValueFactory>
+               </TableColumn>
+           </columns>
+       </TableView>
+   </center>
+    <bottom>
+       <HBox alignment="BOTTOM_RIGHT" spacing="20">
+           <padding>
+               <Insets top="10" right="10" bottom="10" left="10"/>
+           </padding>
+           <Button fx:id="appButton" text="Appointment Report" minWidth="50" onAction="#onAppointmentReport"></Button>
+           <Button fx:id="contactButton" text="Contact Report" minWidth="50" onAction="#onContactReport"></Button>
+           <Button fx:id="customerButton" text="Customer Report" minWidth="50" onAction="#onCustomerReport"></Button>
+           <Button text="Add" minWidth="50" onAction="#onAddCustomer"></Button>
+           <Button text="Edit" minWidth="50" onAction="#onEditCustomer"></Button>
+           <Button text="Delete" minWidth="50" onAction="#onDeleteCustomer"></Button>
+       </HBox>
+    </bottom>
+</BorderPane>

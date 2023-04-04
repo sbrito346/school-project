@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane fx:id="appointmentPane" xmlns:fx="http://javafx.com/fxml" fx:controller="home.appointments.AppointmentController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <top>
+        <HBox spacing="20">
+            <padding>
+                <Insets top="5" right="20" bottom="10" left="10"/>
+            </padding>
+            <fx:define>
+                <ToggleGroup fx:id="filterToggleGroup"/>
+            </fx:define>
+            <Label text="Filter Options: "></Label>
+            <RadioButton fx:id="filterNone" text="None" toggleGroup="$filterToggleGroup" selected="true"></RadioButton>
+            <RadioButton fx:id="filterMonth" text="Current Month" toggleGroup="$filterToggleGroup"></RadioButton>
+            <RadioButton fx:id="filterWeek" text="Current Week" toggleGroup="$filterToggleGroup"></RadioButton>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="appointmentTable">
+            <columns>
+                <TableColumn text="ID" maxWidth="30">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Title">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Description">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Location" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="locationAppointment"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Contact" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="contactName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Type" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Start Date" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="startDateString"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="End Date" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="endDateString"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Customer ID" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="customerId"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="User ID" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userId"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" spacing="20">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Add" minWidth="50" onAction="#onAdd"></Button>
+            <Button text="Edit" minWidth="50" onAction="#onEdit" ></Button>
+            <Button text="Delete" minWidth="50" onAction="#onDelete"></Button>
+        </HBox>
+    </bottom>
+</BorderPane>

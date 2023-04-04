@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:id="modifyAppointmentPane" xmlns:fx="http://javafx.com/fxml" hgap="20" vgap="20" fx:controller="home.appointments.AppointmentController">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" alignment="CENTER">
+        <Text fx:id="headerText"/>
+    </HBox>
+
+    <Label text="ID:"   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="idTextField"  GridPane.columnIndex="1" GridPane.rowIndex="1" minWidth="300"/>
+
+    <Label text="Title:"   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField  fx:id="title" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Description:"   GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField  fx:id="description" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="Location:"   GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField  fx:id="locationAppointment" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Contact:"   GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <ComboBox fx:id="contactList" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Type:"   GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <TextField  fx:id="type" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Label text="Start Date Time(yyyy-MM-dd HH:mm:ss):"   GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <TextField  fx:id="startTime" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+    <Label text="End Date Time(yyyy-MM-dd HH:mm:ss):"   GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+    <TextField  fx:id="endTime" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+    <Label text="Customer ID"   GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+    <TextField  fx:id="customerId" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+    <Label text="User ID:"   GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+    <TextField  fx:id="userId" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+
+    <HBox alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="11">
+        <Button fx:id="confirmButton" text="Confirm" onAction="#onConfirm"/>
+    </HBox>
+
+</GridPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:id="modifyCustomerPane" xmlns:fx="http://javafx.com/fxml"  hgap="20" vgap="20" fx:controller="home.customer.ModifyCustomerController">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" alignment="CENTER">
+        <Text fx:id="headerText" text="Add New Customer" />
+    </HBox>
+
+    <Label text="ID:"   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="idTextField"  GridPane.columnIndex="1" GridPane.rowIndex="1" minWidth="300"/>
+
+    <Label text="Name:"   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField  fx:id="name" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Address:"   GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField  fx:id="address" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="Country:"  GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <ComboBox fx:id="countryList" promptText="Select" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="State/Province:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <ComboBox fx:id="divisionList"  promptText="Select" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Postal Code:"   GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <TextField  fx:id="postalCode" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Label text="Phone Number:"   GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <TextField  fx:id="phoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+    <HBox alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="8">
+        <Button fx:id="confirmButton" text="Confirm" onAction="#onConfirm"/>
+    </HBox>
+
+</GridPane>
